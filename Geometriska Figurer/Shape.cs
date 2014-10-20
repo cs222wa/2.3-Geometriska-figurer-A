@@ -12,8 +12,8 @@ namespace Geometriska_Figurer
         Rectangle,
     };
     //Den uppräkningsbara typen ShapeType används för att definiera vilka typer av figurer applikationen 
-    //kan hantera. Typen används då metoden Main() anropar metoden CreateShape() för att informera 
-    //vilken typ av figur som ska skapas.
+    //kan hantera. 
+    //Typen används då metoden Main() anropar metoden CreateShape() för att informera vilken typ av figur som ska skapas.
     //Typen definieras lämpligen i filen Shape.cs, men då utanför klassdefinitionen så att den inte blir en 
     //del av typen Shape.
 
@@ -50,6 +50,11 @@ namespace Geometriska_Figurer
 
         override public string ToString()
         {
+            //string message;
+            //            message = (String.Format("Längd: {0}\n Bredd: {1}\n Omkrets:{2}\n Area: {3}\n", Length, Width, Perimeter, Area));
+            //            return message;
+
+
             //Publik metod som överskuggar metoden ToString() i basklassen Object. Metoden ska returnera en 
             //sträng representerande värdet av en instans. Strängen ska vara lite speciellt formaterad och på separata 
             //rader innehålla ledtext och värde för figurens läng, bredd, omkrets och area.
