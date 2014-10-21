@@ -8,6 +8,7 @@ namespace Geometriska_Figurer
 {
     public enum ShapeType
     {
+        Undefined,
         Ellipse,
         Rectangle,
     }
@@ -37,9 +38,9 @@ namespace Geometriska_Figurer
 
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    throw new ArgumentException("Värdet för objektets längd är för litet.\n Var vänlig ange ett värde större än 0.");
+                    throw new ArgumentException("Värdet för objektets längd är för litet.\nVar vänlig ange ett värde större än 0.");
                 }
                 _length = value;
             }
@@ -60,9 +61,9 @@ namespace Geometriska_Figurer
 
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    throw new ArgumentException("Värdet för objektets bredd är för litet.\n Var vänlig ange ett värde större än 0.");
+                    throw new ArgumentException("Värdet för objektets bredd är för litet.\nVar vänlig ange ett värde större än 0.");
                 }
                 _width = value;
             }
@@ -72,8 +73,8 @@ namespace Geometriska_Figurer
 
         protected Shape(double length, double width)
         {
-            //length = Length;
-            //width = Width;
+            Length = length;
+            Width = width;
             
             //Konstruktorn, som ska vara ”protected”, ansvara för att fälten, via egenskaperna, tilldelas de värden 
             //konstruktorns parametrar har.
@@ -82,9 +83,8 @@ namespace Geometriska_Figurer
         override public string ToString()
         {
             string message;
-            message = (String.Format("Längd: {0}\n Bredd: {1}\n Omkrets:{2}\n Area: {3}\n", Length, Width, Perimeter, Area));
+            message = (String.Format("\nLängd: {0} \nBredd: {1} \nOmkrets:{2: 0.00} \nArea: {3: 0.00} \n\nAnge ett nytt menyval för att skapa ett nytt objekt.", Length, Width, Perimeter, Area));
             return message;
-
 
             //Publik metod som överskuggar metoden ToString() i basklassen Object. Metoden ska returnera en 
             //sträng representerande värdet av en instans. Strängen ska vara lite speciellt formaterad och på separata 

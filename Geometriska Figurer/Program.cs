@@ -36,8 +36,45 @@ namespace Geometriska_Figurer
 
         static void Main(string[] args)
         {
-            Viewmenu(); //Metoden Main ska anropa metoden ViewMenu() för att visa en meny. 
+            do
+            {
+                Viewmenu(); //Metoden Main ska anropa metoden ViewMenu() för att visa en meny.
+                int index;
 
+                if (Int32.TryParse(Console.ReadLine(), out index) && index >= 0 && index <= 2)
+                {
+                    ShapeType choice = ShapeType.Undefined;
+                    switch (index)
+                    {
+                        case 0:
+                            return;
+
+                        case 1:
+                            choice = ShapeType.Ellipse;
+                            //CreateShape(ShapeType.Ellipse);
+                            //Skicka till CreateShape att det ska skapas en Ellipse
+                            break;
+
+                        case 2:
+                            choice = ShapeType.Rectangle;
+                            //CreateShape(ShapeType.Rectangle);
+                            //Skicka till CreateShape att det ska skapas en Rectangle
+                            break;
+                    }
+
+                    if (choice != ShapeType.Undefined)
+                    {
+                        ViewShapeDetail(CreateShape(choice));
+                    }
+                }
+                Console.WriteLine("Fel. Var god ange en siffra mellan 0 och 2.");
+                Console.CursorVisible = false;
+                Console.ReadKey(true);
+                Console.CursorVisible = true;
+
+                
+            } while (true);
+            
 
             //Vid anrop av metoden ViewShapeDetail(Shape shape) skickas ett argument med som refererar till figurens vars detaljer ska presenteras. 
 
@@ -100,66 +137,20 @@ namespace Geometriska_Figurer
             //få en ny chans att ange ett korrekt menyalternativ.
 
 
-
-            do
-            {
-                Console.Clear();
-                Console.BackgroundColor = ConsoleColor.DarkGreen;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(" ╔══════════════════════════════════════╗ ");
-                Console.WriteLine(" ║                Meny                  ║ ");
-                Console.WriteLine(" ╚══════════════════════════════════════╝ ");
-                Console.ResetColor();
-                Console.WriteLine();
-                Console.WriteLine("0 - Avluta");
-                Console.WriteLine("1 - Skapa en ellips");
-                Console.WriteLine("2 - Skapa en rektangel");
-
-                int index = ReadMenuChoice();
-
-                switch (index)
-                {
-                    case 0:
-                        return;
-
-                    case 1:
-                        CreateShape(ShapeType.Ellipse);
-                        //Skicka till CreateShape att det ska skapas en Ellipse
-                        break;
-
-                    case 2:
-                        CreateShape(ShapeType.Rectangle);
-                        //Skicka till CreateShape att det ska skapas en Rectangle
-                        break; 
-                }
-
-            } while (true);
-
-            //anropa ViewDetail och skicka med referensen till objektet i CreateShape som argument.
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" ╔══════════════════════════════════════╗ ");
+            Console.WriteLine(" ║                Meny                  ║ ");
+            Console.WriteLine(" ╚══════════════════════════════════════╝ ");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("0 - Avluta");
+            Console.WriteLine("1 - Skapa en ellips");
+            Console.WriteLine("2 - Skapa en rektangel");
+            Console.WriteLine();
+            Console.WriteLine("Vad vill du göra? Var god ange en siffra mellan 0 och 2.");
         }
-
-        private static int ReadMenuChoice()
-        {
-            do
-            {
-                int index;
-                Console.WriteLine();
-                Console.WriteLine("Vad vill du göra? Var god ange en siffra mellan 0 och 2.");
-
-                if (Int32.TryParse(Console.ReadLine(), out index) && index >= 0 && index <= 2)
-                {
-                    return index;
-                }
-                Console.WriteLine("Fel. Var god ange en siffra mellan 0 och 2.");
-                Console.CursorVisible = false;
-                Console.ReadKey(true);
-                Console.Clear();
-                Console.CursorVisible = true; 
-            } while (true);
-        }
-
-
-
 
         static void ViewShapeDetail(Shape shape)
         {
@@ -170,8 +161,8 @@ namespace Geometriska_Figurer
             //Parametern shape av typen Shape refererar till figuren. 
 
             //ToString(rectangle);
-
-            
+            Console.WriteLine(shape.ToString());
+            Console.ReadKey();
 
             // Genom att utnyttja att basklassen Shape överskuggar metoden ToString() förenklas koden väsentligt 
             //då en figurs längd, bredd, omkrets och area ska presenteras.
