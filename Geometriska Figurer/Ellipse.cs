@@ -12,7 +12,12 @@ namespace Geometriska_Figurer
         //Area och Perimeter i basklassen
     {
         public override double Area
-        { get; }
+        {
+            get
+            {
+                return 0;
+            }
+        }
 
         //  𝑎/2 = length
       
@@ -24,7 +29,12 @@ namespace Geometriska_Figurer
         //Publik egenskapen av typen double som ska ge en ellips area
 
         public override double Perimeter
-        { get; }
+        { 
+            get
+            {
+                return 0;
+            }
+        }
 
         //  𝑎/2 = length
         //  𝑏/2 = width
@@ -34,7 +44,7 @@ namespace Geometriska_Figurer
 
         //Publik egenskapen av typen double som ska ge en ellips omkrets.
 
-        public Ellipse(double length, double width)
+        public Ellipse(double length, double width) : base (length, width)
         {
         //Publik konstruktor som genom anrop av basklassens konstruktor ser till att det nya objektets längd och 
         //bredd sätts

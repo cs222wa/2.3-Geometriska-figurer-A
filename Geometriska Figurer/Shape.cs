@@ -22,8 +22,8 @@ namespace Geometriska_Figurer
     //Den abstrakta klassen Shape innehåller såväl konkreta som abstrakta medlemmar gemensamma för 
     //figurer som ellips och rektangel. I Figur A.3 presenteras de abstrakta medlemmarna med kursiv text.
     {
-        private double _length;  //Privat fält av typen double representerande en figurs längd.
-        private double _width;  //Privat fält av typen double representerande en figurs bredd.
+        private static double _length;  //Privat fält av typen double representerande en figurs längd.
+        private static double _width;  //Privat fält av typen double representerande en figurs bredd.
 
 
 

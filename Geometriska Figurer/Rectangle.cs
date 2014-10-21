@@ -12,7 +12,12 @@ namespace Geometriska_Figurer
         //Area och Perimeter i basklassen.
     {
         public override double Area
-        { get; }
+        {
+            get
+            {
+                return 0;
+            }
+        }
 
         // 𝐴𝑟𝑒𝑎 = 𝑙 ∙ 𝑤
         //length * width
@@ -20,14 +25,19 @@ namespace Geometriska_Figurer
         //Publik egenskapen av typen double som ska ge en rektangel area
 
         public override double Perimeter
-        { get; }
+        {
+            get
+            {
+                return 0;
+            }
+        }
 
         //𝑂𝑚𝑘𝑟𝑒𝑡𝑠 = 2𝑙 + 2𝑤
         //2 * l + 2 * w
 
         //Publik egenskapen av typen double som ska ge en rektangel omkrets.
 
-        public Rectangle(double length, double width)
+        public Rectangle(double length, double width) : base (length, width)
         {
             //Publik konstruktor som genom anrop av basklassens konstruktor ser till att det nya objektets längd och 
             //bredd sätts

@@ -1,2 +1,6 @@
 C:\Users\Carolina\Documents\GitHub\1DV402-Labbar\2-3-A\Geometriska Figurer\bin\Debug\Geometriska Figurer.exe.config
 C:\Users\Carolina\Documents\GitHub\1DV402-Labbar\2-3-A\Geometriska Figurer\obj\Debug\Geometriska Figurer.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\Documents\GitHub\1DV402-Labbar\2-3-A\Geometriska Figurer\bin\Debug\Geometriska Figurer.exe
+C:\Users\Carolina\Documents\GitHub\1DV402-Labbar\2-3-A\Geometriska Figurer\bin\Debug\Geometriska Figurer.pdb
+C:\Users\Carolina\Documents\GitHub\1DV402-Labbar\2-3-A\Geometriska Figurer\obj\Debug\Geometriska Figurer.exe
+C:\Users\Carolina\Documents\GitHub\1DV402-Labbar\2-3-A\Geometriska Figurer\obj\Debug\Geometriska Figurer.pdb

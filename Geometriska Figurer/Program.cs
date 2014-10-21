@@ -15,13 +15,13 @@ namespace Geometriska_Figurer
         {
             if (shapeType == ShapeType.Ellipse)
             {
-                Ellipse ellipse = new Ellipse();
+                Ellipse ellipse = new Ellipse(Shape.Length, Shape.Width);
                 return ellipse;
             }
             else
             {
 
-                Rectangle rectangle = new Rectangle();
+                Rectangle rectangle = new Rectangle(Shape.Length, Shape.Width);
                 return rectangle;
             }
             string promtLength = "Ange objektets längd: ";
@@ -51,16 +51,19 @@ namespace Geometriska_Figurer
             Console.WriteLine(promt);
             double measurements = double.Parse(Console.ReadLine());
 
-            if (double.TryParse(Console.ReadLine(), out measurements) && measurements > 0)
+            while (true)
             {
-                return measurements;
+                if (double.TryParse(Console.ReadLine(), out measurements) && measurements > 0)
+                {
+                    return measurements;
+                }
+
+                Console.WriteLine("Fel. Var god ange ett värde större än 0.");
+                Console.CursorVisible = false;
+                Console.ReadKey(true);
+                Console.Clear();
+                Console.CursorVisible = true; 
             }
-            
-            Console.WriteLine("Fel. Var god ange ett värde större än 0.");
-            Console.CursorVisible = false;
-            Console.ReadKey(true);
-            Console.Clear();
-            Console.CursorVisible = true;
 
             //Den privata statiska metoden ReadDoubleGreaterThanZero() ska returnera ett värde av typen 
             //double som är större än 0. 
