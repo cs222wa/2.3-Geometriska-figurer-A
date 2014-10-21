@@ -72,8 +72,8 @@ namespace Geometriska_Figurer
 
         protected Shape(double length, double width)
         {
-            length = Length;
-            width = Width;
+            //length = Length;
+            //width = Width;
             
             //Konstruktorn, som ska vara ”protected”, ansvara för att fälten, via egenskaperna, tilldelas de värden 
             //konstruktorns parametrar har.

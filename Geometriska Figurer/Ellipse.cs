@@ -15,13 +15,12 @@ namespace Geometriska_Figurer
         {
             get
             {
-                return 0;
+                return Math.PI * Length/2 * Width/2;
             }
         }
 
-        //  𝑎/2 = length
-      
-        //  𝑏/2 = width
+        //  𝑎*2 = length
+        //  𝑏*2 = width
 
         //  𝐴𝑟𝑒𝑎 = 𝜋 ∙ 𝑎 ∙ b =
         //  Math.PI * a * b
@@ -32,12 +31,11 @@ namespace Geometriska_Figurer
         { 
             get
             {
-                return 0;
+                return Math.PI * Math.Sqrt(2 * Length/2 * Length/2 + 2 * Width/2 * Width/2);
             }
         }
-
-        //  𝑎/2 = length
-        //  𝑏/2 = width
+        //  𝑎*2 = length
+        //  𝑏*2 = width
 
         //𝑂𝑚𝑘𝑟𝑒𝑡𝑠 = 𝜋 roten ur 2𝑎2 + 2𝑏2   =
         //Math.PI * Math.Sqrt(2 * a * a + 2 * b * b)
@@ -47,10 +45,7 @@ namespace Geometriska_Figurer
         public Ellipse(double length, double width) : base (length, width)
         {
         //Publik konstruktor som genom anrop av basklassens konstruktor ser till att det nya objektets längd och 
-        //bredd sätts
-
-            // Shape(argument för  lenght, argument för width);
-            
+        //bredd sätts 
         }
     }
 }

@@ -13,24 +13,22 @@ namespace Geometriska_Figurer
     {
         private static Shape CreateShape(ShapeType shapeType)
         {
+            string promtLength = "Ange objektets längd: ";
+            double length = ReadDoubleGreaterThanZero(promtLength);
+
+            string promtWidth = "Ange objektets bredd: ";
+            double width = ReadDoubleGreaterThanZero(promtWidth);
+
             if (shapeType == ShapeType.Ellipse)
             {
-                Ellipse ellipse = new Ellipse(Shape.Length, Shape.Width);
+                Ellipse ellipse = new Ellipse(length, width);
                 return ellipse;
             }
             else
             {
-
-                Rectangle rectangle = new Rectangle(Shape.Length, Shape.Width);
+                Rectangle rectangle = new Rectangle(length, width);
                 return rectangle;
             }
-            string promtLength = "Ange objektets längd: ";
-            Shape.Length = ReadDoubleGreaterThanZero(promtLength);
-
-            string promtWidth = "Ange objektets bredd: ";
-            Shape.Width = ReadDoubleGreaterThanZero(promtWidth);
-
-
         }
         //Den privata statiska metoden CreateShape ska läsa in en figurs längd och bredd, skapa objektet och 
         //returnera en referens till det. 
@@ -41,15 +39,23 @@ namespace Geometriska_Figurer
             Viewmenu(); //Metoden Main ska anropa metoden ViewMenu() för att visa en meny. 
 
 
+            //Vid anrop av metoden ViewShapeDetail(Shape shape) skickas ett argument med som refererar till figurens vars detaljer ska presenteras. 
+
+            //Parametern shape av typen Shape refererar till figuren. 
 
 
+
+            //Fel i felhanteringen på menyn - lösning från Erik?
+            //"ViewMenu() ska inte hantera inläsning av data", din ReadMenuChoice() och switch borde ligga i Main(), och därmed även while-loopen
+            //aha okey. ^^ Får flytta runt lite då.Men ska själva metoden ReadMenuChoice() bort helt och hållet då eller ska den bara flyttas ut?
+            //[10:27:07] Erik Hamrin: Nä, bara flyttas ut :)
 
         }
 
         static private double ReadDoubleGreaterThanZero(string promt)
         {
             Console.WriteLine(promt);
-            double measurements = double.Parse(Console.ReadLine());
+            double measurements; 
 
             while (true)
             {
@@ -151,11 +157,11 @@ namespace Geometriska_Figurer
                 Console.CursorVisible = true; 
             } while (true);
         }
-        
 
 
 
-        void ViewShapeDetail(Shape shape)
+
+        static void ViewShapeDetail(Shape shape)
         {
             //Den privata statiska metoden ViewShapewDetail() ska presentera en figurs detaljer. 
 
@@ -163,7 +169,9 @@ namespace Geometriska_Figurer
 
             //Parametern shape av typen Shape refererar till figuren. 
 
-            ToString();
+            //ToString(rectangle);
+
+            
 
             // Genom att utnyttja att basklassen Shape överskuggar metoden ToString() förenklas koden väsentligt 
             //då en figurs längd, bredd, omkrets och area ska presenteras.

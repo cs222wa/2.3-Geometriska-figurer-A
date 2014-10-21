@@ -15,7 +15,7 @@ namespace Geometriska_Figurer
         {
             get
             {
-                return 0;
+                return Length*Width;
             }
         }
 
@@ -28,7 +28,7 @@ namespace Geometriska_Figurer
         {
             get
             {
-                return 0;
+                return 2*Length + 2*Width;
             }
         }
 
@@ -41,10 +41,6 @@ namespace Geometriska_Figurer
         {
             //Publik konstruktor som genom anrop av basklassens konstruktor ser till att det nya objektets längd och 
             //bredd sätts
-
-            //körde med Rectangle(bla, bla)
-            //                    :base (bla, bla)
-            //Doxbox har gjort rätt
         }
     }
 }
