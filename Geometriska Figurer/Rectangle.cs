@@ -11,15 +11,15 @@ namespace Geometriska_Figurer
         //objekt av klassen, d.v.s. den ska vara konkret, måste den implementera de abstrakta egenskaperna 
         //Area och Perimeter i basklassen.
     {
-        public double Area
+        public override double Area
         { get; }
 
         // 𝐴𝑟𝑒𝑎 = 𝑙 ∙ 𝑤
-        //lenght * width
+        //length * width
 
         //Publik egenskapen av typen double som ska ge en rektangel area
 
-        public double Perimeter
+        public override double Perimeter
         { get; }
 
         //𝑂𝑚𝑘𝑟𝑒𝑡𝑠 = 2𝑙 + 2𝑤
@@ -27,12 +27,12 @@ namespace Geometriska_Figurer
 
         //Publik egenskapen av typen double som ska ge en rektangel omkrets.
 
-        public double Rectangle(double lenght, double width)
+        public Rectangle(double length, double width)
         {
             //Publik konstruktor som genom anrop av basklassens konstruktor ser till att det nya objektets längd och 
             //bredd sätts
 
-            //körde med Ellipse(bla, bla)
+            //körde med Rectangle(bla, bla)
             //                    :base (bla, bla)
             //Doxbox har gjort rätt
         }

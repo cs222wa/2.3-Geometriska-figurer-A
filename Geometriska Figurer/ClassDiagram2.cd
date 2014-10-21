@@ -3,7 +3,7 @@
   <Class Name="Geometriska_Figurer.Program">
     <Position X="0.5" Y="0.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAABAAAAAAAAAAAAAAAAAQAAAAQBAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAABAAAAAABAAAAAAAAAAQAAAAQBAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,7 +32,7 @@
     <Position X="6.5" Y="1" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Enum Name="Geometriska_Figurer.Shapetype">
+  <Enum Name="Geometriska_Figurer.ShapeType">
     <Position X="9.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>

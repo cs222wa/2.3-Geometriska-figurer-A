@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Geometriska_Figurer
 {
-    enum Shapetype
+    public enum ShapeType
     {
         Ellipse,
         Rectangle,
-    };
+    }
     //Den uppräkningsbara typen ShapeType används för att definiera vilka typer av figurer applikationen 
     //kan hantera. 
     //Typen används då metoden Main() anropar metoden CreateShape() för att informera vilken typ av figur som ska skapas.
@@ -18,11 +18,11 @@ namespace Geometriska_Figurer
     //del av typen Shape.
 
 
-   abstract class Shape  
-        //Den abstrakta klassen Shape innehåller såväl konkreta som abstrakta medlemmar gemensamma för 
-        //figurer som ellips och rektangel. I Figur A.3 presenteras de abstrakta medlemmarna med kursiv text.
+    abstract class Shape
+    //Den abstrakta klassen Shape innehåller såväl konkreta som abstrakta medlemmar gemensamma för 
+    //figurer som ellips och rektangel. I Figur A.3 presenteras de abstrakta medlemmarna med kursiv text.
     {
-        private double _lenght;  //Privat fält av typen double representerande en figurs längd.
+        private double _length;  //Privat fält av typen double representerande en figurs längd.
         private double _width;  //Privat fält av typen double representerande en figurs bredd.
 
 
@@ -31,28 +31,59 @@ namespace Geometriska_Figurer
         { get; }
 
 
-        public double Lenght
-        { get; set;}  //Kapslar in _lenght. set-metoden ska validera värdet som tilldelas egenskapen. Är värdet inte större än 0 ska ett undantag 
-                      //av typen ArgumentException kastas.
+        public static double Length
+        {
+            get { return _length; }
+
+            set
+            {
+                if (value > 0)
+                {
+                    throw new ArgumentException("Värdet för objektets längd är för litet.\n Var vänlig ange ett värde större än 0.");
+                }
+                _length = value;
+            }
+
+        }  //Kapslar in _lenght. set-metoden ska validera värdet som tilldelas egenskapen. Är värdet inte större än 0 ska ett undantag 
+        //av typen ArgumentException kastas.
+
+
+
 
         public abstract double Perimeter //Publik abstrakt egenskap av typen double representerande en figurs omkrets.
         { get; }
+        
 
-        public double Width
-        { get; set; }   //kapslar in _width. set-metoden ska validera värdet som tilldelas egenskapen. Är värdet inte större än 0 ska ett undantag 
-                        //av typen ArgumentException kastas.
-
-        protected Shape(double lenght, double width)
+        public static double Width
         {
+            get { return _width; }
+
+            set
+            {
+                if (value > 0)
+                {
+                    throw new ArgumentException("Värdet för objektets bredd är för litet.\n Var vänlig ange ett värde större än 0.");
+                }
+                _width = value;
+            }
+
+        }  //kapslar in _width. set-metoden ska validera värdet som tilldelas egenskapen. Är värdet inte större än 0 ska ett undantag 
+        //av typen ArgumentException kastas.
+
+        protected Shape(double length, double width)
+        {
+            length = Length;
+            width = Width;
+            
             //Konstruktorn, som ska vara ”protected”, ansvara för att fälten, via egenskaperna, tilldelas de värden 
             //konstruktorns parametrar har.
         }
 
         override public string ToString()
         {
-            //string message;
-            //            message = (String.Format("Längd: {0}\n Bredd: {1}\n Omkrets:{2}\n Area: {3}\n", Length, Width, Perimeter, Area));
-            //            return message;
+            string message;
+            message = (String.Format("Längd: {0}\n Bredd: {1}\n Omkrets:{2}\n Area: {3}\n", Length, Width, Perimeter, Area));
+            return message;
 
 
             //Publik metod som överskuggar metoden ToString() i basklassen Object. Metoden ska returnera en 
