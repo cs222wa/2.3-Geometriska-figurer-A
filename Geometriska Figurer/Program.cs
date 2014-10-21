@@ -101,13 +101,13 @@ namespace Geometriska_Figurer
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(" ╔══════════════════════════════════════╗ ");
-                Console.WriteLine(" ║                Menu                  ║ ");
+                Console.WriteLine(" ║                Meny                  ║ ");
                 Console.WriteLine(" ╚══════════════════════════════════════╝ ");
                 Console.ResetColor();
                 Console.WriteLine();
-                Console.WriteLine("0 - Exit");
-                Console.WriteLine("1 - Ellipse");
-                Console.WriteLine("2 - Rectangle");
+                Console.WriteLine("0 - Avluta");
+                Console.WriteLine("1 - Skapa en ellips");
+                Console.WriteLine("2 - Skapa en rektangel");
 
                 int index = ReadMenuChoice();
 
@@ -134,21 +134,24 @@ namespace Geometriska_Figurer
 
         private static int ReadMenuChoice()
         {
-            int index;
-            while (true)
+            do
             {
+                int index;
+                Console.WriteLine();
+                Console.WriteLine("Vad vill du göra? Var god ange en siffra mellan 0 och 2.");
 
                 if (Int32.TryParse(Console.ReadLine(), out index) && index >= 0 && index <= 2)
                 {
                     return index;
                 }
-                Console.WriteLine("Fel. Var god ange ett värde mellan 0 och 2.");
+                Console.WriteLine("Fel. Var god ange en siffra mellan 0 och 2.");
                 Console.CursorVisible = false;
                 Console.ReadKey(true);
                 Console.Clear();
-                Console.CursorVisible = true;
-            }
+                Console.CursorVisible = true; 
+            } while (true);
         }
+        
 
 
 
